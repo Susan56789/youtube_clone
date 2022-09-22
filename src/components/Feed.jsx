@@ -1,4 +1,4 @@
-import React, { useState, useEffct, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 import Sidebar from './Sidebar'
 import Videos from './Videos'
@@ -14,7 +14,8 @@ const Feed = () => {
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-      .then((data) => { setVideos(data.items) })
+      .then((res) => setVideos(res.items))
+      .catch((err) => console.log(err))
   }, [selectedCategory])
 
   return (

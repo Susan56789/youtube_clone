@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ChannelCrd = () => {
+const ChannelCard = () => {
     return (
         <div>ChannelCrd</div>
     )
 }
 
-export default ChannelCrd
+export default ChannelCard
