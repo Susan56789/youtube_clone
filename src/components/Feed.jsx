@@ -13,8 +13,10 @@ const Feed = () => {
   //useEffect is a dependancy hook that gets called when the component is rendered
 
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-      .then((res) => setVideos(res.items))
+    fetchFromAPI(`search/?part=snippet&q=${selectedCategory}`)
+      .then((res) => (
+        setVideos(res.data.items)
+      ))
       .catch((err) => console.log(err))
   }, [selectedCategory])
 
@@ -47,5 +49,6 @@ const Feed = () => {
     </Stack>
   )
 }
+
 
 export default Feed
