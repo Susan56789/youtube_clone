@@ -34,7 +34,7 @@ const ChannelCard = ({ channelDetail }) => {
                         <>
                             <Typography variant='h7' color='gray'>
 
-                                {parseInt(channelDetail.stats?.subscribers).toLocaleString()} Subscribrs . {parseInt(channelDetail.stats?.videos).toLocaleString()} Videos
+                                {parseInt(channelDetail.stats?.subscribers).toLocaleString()} Subscribers . {parseInt(channelDetail.stats?.videos).toLocaleString()} Videos
                             </Typography>
                         </>
                     )}
