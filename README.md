@@ -10,3 +10,7 @@ Youtube Clone App made with React JS
 - [Axios]
 - [React Player](https://www.npmjs.com/package/react-player)
   [Emotion](https://emotion.sh/docs/introduction)
+
+## API
+
+Youtube RapidAPI
