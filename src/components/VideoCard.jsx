@@ -6,7 +6,7 @@ import { CheckCircle } from '@mui/icons-material'
 import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from '../utils/constants'
 
 const VideoCard = ({ video }) => {
-    //console.log(video)
+    console.log(video)
     return (
         <Card sx={{ width: { md: '320px', xs: '356px' }, boxShadow: 'none', borderRadius: 0 }}>
             <Link to={video.videoId ? `/video/${video.videoId}` : demoVideoUrl}>
@@ -17,10 +17,10 @@ const VideoCard = ({ video }) => {
                 />
             </Link>
             <CardContent
-                sx={{ backgroundColor: '#1e1e1e', height: '100px' }}>
+                sx={{ backgroundColor: '#1e1e1e', height: '150px' }}>
                 <Link to={video.videoId ? `/video/${video.videoId}` : demoVideoUrl}>
                     <Typography variant='subtitle1' fontWeight='bold' color='#fff'>
-                        {video?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+                        {video?.title.slice(0, 100) || demoVideoTitle.slice(0, 100)}
                     </Typography>
                 </Link>
                 <Link to={video.author.channelId ? `/channel/${video.author.channelId}` : demoChannelUrl}>
@@ -28,9 +28,18 @@ const VideoCard = ({ video }) => {
                         {video?.author.title.slice(0, 60) || demoChannelTitle.slice(0, 60)}
                         <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5px' }} />
                     </Typography>
-                    <Typography variant='subtitle2' color='gray'>
-                        {video?.stats?.views && parseInt(video.stats?.views).toLocaleString()} views . {video?.publishedTimeText}
-                    </Typography>
+                    {video?.stats?.views && (
+                        <Typography variant='subtitle2' color='gray'>
+                            {video?.stats?.views && parseInt(video.stats?.views).toLocaleString()} views . {video?.publishedTimeText}
+                        </Typography>
+                    )}
+
+                    {video?.stats?.viewers && (
+                        <Typography variant='subtitle2' color='gray'>
+                            {video?.stats?.viewers && parseInt(video.stats?.viewers).toLocaleString()} watching . {video?.badges[0]}
+                        </Typography>
+                    )}
+
                 </Link>
             </CardContent>
 
