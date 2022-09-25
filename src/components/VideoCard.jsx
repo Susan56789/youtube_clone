@@ -23,9 +23,9 @@ const VideoCard = ({ video }) => {
                         {video?.title.slice(0, 100) || demoVideoTitle.slice(0, 100)}
                     </Typography>
                 </Link>
-                <Link to={video.author.channelId ? `/channel/${video.author.channelId}` : demoChannelUrl}>
+                <Link to={video.author?.channelId?.id ? `/channel/${video.author?.channelId?.id}` : demoChannelUrl}>
                     <Typography variant='subtitle2' fontWeight='bold' color='gray'>
-                        {video?.author.title.slice(0, 60) || demoChannelTitle.slice(0, 60)}
+                        {video?.author?.title.slice(0, 60) || demoChannelTitle.slice(0, 60)}
                         <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5px' }} />
                     </Typography>
                     {video?.stats?.views && (
