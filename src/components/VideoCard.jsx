@@ -6,7 +6,7 @@ import { CheckCircle } from '@mui/icons-material'
 import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from '../utils/constants'
 
 const VideoCard = ({ video }) => {
-    console.log(video)
+    //console.log(video)
     return (
         <Card sx={{ width: { md: '320px', xs: '356px' }, boxShadow: 'none', borderRadius: 0 }}>
             <Link to={video.videoId ? `/video/${video.videoId}` : demoVideoUrl}>
