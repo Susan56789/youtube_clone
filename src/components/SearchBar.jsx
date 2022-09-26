@@ -9,18 +9,18 @@ const SearchBar = () => {
     const navigate = useNavigate(); //useNavigate is a hook that allows us to navigate to a different route
 
     const handleSubmit = (e) => {
-        e.prevecccccntDefault();
-
+        e.preventDefault();
         if (searchTerm) {
             navigate(`/search/${searchTerm}`)
             setSearchTerm('')
         }
     }
 
+
     return (
         <Paper
             component="form"
-            onSubmit={handleSubmit()}
+            onSubmit={(e) => handleSubmit(e)}
             sx={{
                 borderRadius: 20,
                 border: '1px solid #e3e3e3',
